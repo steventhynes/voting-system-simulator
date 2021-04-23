@@ -9,5 +9,5 @@ class EuclideanDistanceCandidateRetreiver(CandidateRetriever):
         for candidate in district.candidates:
             distance = sqrt((voter.views.get(0) - candidate.views_current.get(0)) ** 2 + (voter.views.get(1) - candidate.views_current.get(1)) ** 2)
             if distance <= threshold:
-            candidate_list.append((candidate, threshold - distance))
+                candidate_list.append((candidate, threshold - distance))
         return sorted(candidate_list, key=lambda x: x[1], reverse=True)
