@@ -19,6 +19,8 @@ class PoliticalCompassPartySystem(PartySystem):
         return party_str
 
     def generate_vector(self, party):
+        if party not in self.parties:
+            raise Exception("Party is not in the system.")
         xvalue = halfnorm.rvs() * (1 if "Right" in party else -1)
         yvalue = halfnorm.rvs() * (1 if "Auth" in party else -1)
         return PolicicsVector(2, [xvalue, yvalue])
