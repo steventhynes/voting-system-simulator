@@ -14,7 +14,12 @@ class Country:
         self.election_count = 0
 
         self.nation_populator.populate(self)
+        for dist in self.districts:
+            dist.district_populator.populate()
 
     def run_election(self):
-        raise NotImplementedError
+        for dist in self.districts:
+            self.voting_system.district_election(dist)
+        self.voting_system.country_election(self)
+        
         
