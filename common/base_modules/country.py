@@ -1,9 +1,9 @@
 
 class Country:
 
-    def __init__(self, nation_populator, nation_updater, voting_system, party_system=None, other_data={}):
-        self.nation_populator = nation_populator
-        self.nation_updater = nation_updater
+    def __init__(self, country_populator, country_updater, voting_system, party_system=None, other_data={}):
+        self.country_populator = country_populator
+        self.country_updater = country_updater
         self.voting_system = voting_system
         self.party_system = party_system
         self.other_data = other_data
@@ -13,13 +13,13 @@ class Country:
 
         self.election_count = 0
 
-        self.nation_populator.populate(self)
+        self.country_populator.populate(self)
 
     def run_election(self):
         self.voting_system.election(self)
         for dist in self.districts:
             dist.district_updater.update()
-        self.nation_updater.update()
+        self.country_updater.update()
         self.election_count += 1
         
         
