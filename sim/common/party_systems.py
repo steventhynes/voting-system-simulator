@@ -1,5 +1,5 @@
-from party_system import PartySystem
-from politics_vector import PolicicsVector
+from base_modules.party_system import PartySystem
+from base_modules.politics_vector import PoliticsVector
 from scipy.stats import halfnorm
 
 class PoliticalCompassPartySystem(PartySystem):
@@ -23,6 +23,6 @@ class PoliticalCompassPartySystem(PartySystem):
             raise Exception("Party is not in the system.")
         xvalue = halfnorm.rvs() * (1 if "Right" in party else -1)
         yvalue = halfnorm.rvs() * (1 if "Auth" in party else -1)
-        return PolicicsVector(2, [xvalue, yvalue])
+        return PoliticsVector(2, [xvalue, yvalue])
         
         

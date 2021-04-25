@@ -1,3 +1,4 @@
+from math import sqrt
 
 class PoliticsVector:
 
@@ -20,3 +21,9 @@ class PoliticsVector:
 
     def put(self, index, value):
         self.backing_array[index] = value
+
+    def size(self):
+        return len(self.backing_array)
+
+    def distance(self, other):
+        return sqrt((self.get(0) - other.get(0)) ** 2 + (self.get(1) - other.get(1)) ** 2)
