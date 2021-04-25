@@ -1,9 +1,9 @@
-from base_modules.district_updater import DistrictUpdater
-from base_modules.politics_vector import PoliticsVector
-from base_modules.voter import Voter
-from base_modules.candidate import Candidate
-from candidate_retreivers import EuclideanDistanceCandidateRetreiver
-from candidate_movements import BasicCandidateMovement
+from common.base_modules.district_updater import DistrictUpdater
+from common.base_modules.politics_vector import PoliticsVector
+from common.base_modules.voter import Voter
+from common.base_modules.candidate import Candidate
+from common.candidate_retreivers import EuclideanDistanceCandidateRetreiver
+from common.candidate_movements import BasicCandidateMovement
 from scipy.stats import norm
 
 class BasicDistrictUpdater(DistrictUpdater):

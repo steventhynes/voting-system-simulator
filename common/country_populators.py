@@ -1,8 +1,8 @@
 from common.base_modules.politics_vector import PoliticsVector
-from base_modules.country_populator import CountryPopulator
-from district_populators import BasicDistrictPopulator
-from district_updaters import BasicDistrictUpdater
-from base_modules.district import District
+from common.base_modules.country_populator import CountryPopulator
+from common.district_populators import BasicDistrictPopulator
+from common.district_updaters import BasicDistrictUpdater
+from common.base_modules.district import District
 from random import random
 
 class BasicCountryPopulator(CountryPopulator):

@@ -1,4 +1,4 @@
-from base_modules.voting_system import VotingSystem
+from common.base_modules.voting_system import VotingSystem
 
 class FirstPastThePostVotingSystem(VotingSystem):
 

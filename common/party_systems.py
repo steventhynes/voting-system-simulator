@@ -1,5 +1,5 @@
-from base_modules.party_system import PartySystem
-from base_modules.politics_vector import PoliticsVector
+from common.base_modules.party_system import PartySystem
+from common.base_modules.politics_vector import PoliticsVector
 from scipy.stats import halfnorm
 
 class PoliticalCompassPartySystem(PartySystem):

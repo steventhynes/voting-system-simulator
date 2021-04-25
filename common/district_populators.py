@@ -1,10 +1,10 @@
 from scipy.stats import norm
-from base_modules.district_populator import DistrictPopulator
-from base_modules.politics_vector import PoliticsVector
-from base_modules.voter import Voter
-from base_modules.candidate import Candidate
-from candidate_retreivers import EuclideanDistanceCandidateRetreiver
-from candidate_movements import BasicCandidateMovement
+from common.base_modules.district_populator import DistrictPopulator
+from common.base_modules.politics_vector import PoliticsVector
+from common.base_modules.voter import Voter
+from common.base_modules.candidate import Candidate
+from common.candidate_retreivers import EuclideanDistanceCandidateRetreiver
+from common.candidate_movements import BasicCandidateMovement
 
 class BasicDistrictPopulator(DistrictPopulator):
 

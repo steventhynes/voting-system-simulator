@@ -1,5 +1,5 @@
-from base_modules.candidate_movement import CandidateMovement
-from base_modules.politics_vector import PoliticsVector
+from common.base_modules.candidate_movement import CandidateMovement
+from common.base_modules.politics_vector import PoliticsVector
 
 class BasicCandidateMovement(CandidateMovement):
 

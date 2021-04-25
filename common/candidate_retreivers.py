@@ -1,4 +1,4 @@
-from base_modules.candidate_retreiver import CandidateRetriever
+from common.base_modules.candidate_retreiver import CandidateRetriever
 
 class EuclideanDistanceCandidateRetreiver(CandidateRetriever):
 

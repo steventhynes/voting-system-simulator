@@ -1,4 +1,4 @@
-from base_modules.country_updater import CountryUpdater
+from common.base_modules.country_updater import CountryUpdater
 
 class BasicCountryUpdater(CountryUpdater):
 
