@@ -1,4 +1,4 @@
-from base_modules.politics_vector import PoliticsVector
+from common.base_modules.politics_vector import PoliticsVector
 from base_modules.country_populator import CountryPopulator
 from district_populators import BasicDistrictPopulator
 from district_updaters import BasicDistrictUpdater
