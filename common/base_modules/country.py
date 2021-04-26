@@ -18,8 +18,8 @@ class Country:
     def run_election(self):
         self.voting_system.election(self)
         for dist in self.districts:
-            dist.district_updater.update()
-        self.country_updater.update()
+            dist.district_updater.update(dist)
+        self.country_updater.update(self)
         self.election_count += 1
         
         
