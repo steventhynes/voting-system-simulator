@@ -10,7 +10,7 @@ class BasicCountryPopulator(CountryPopulator):
     def populate(self, country):
         district_count = 10
         for i in range(district_count):
-            baseline_dimensions = PoliticsVector(2, [random(), random()])
+            baseline_dimensions = PoliticsVector(2, [random() * 2 - 1, random() * 2 - 1])
             district_populator = BasicDistrictPopulator()
             district_updater = BasicDistrictUpdater()
             country.districts.append(District(baseline_dimensions, district_populator, district_updater))
