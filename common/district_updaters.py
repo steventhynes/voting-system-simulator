@@ -25,8 +25,8 @@ class BasicDistrictUpdater(DistrictUpdater):
         centroid_x = 0
         centroid_y = 0
         for voter in district.voters:
-            centroid_x += voter.views.get(0) / district.voters.size()
-            centroid_y += voter.views.get(1) / district.voters.size()
+            centroid_x += voter.views.get(0) / len(district.voters)
+            centroid_y += voter.views.get(1) / len(district.voters)
         non_representative_candidates = [c for c in district.candidates if c not in district.representatives]
         max_dist = 0
         max_candidate = None
@@ -39,7 +39,7 @@ class BasicDistrictUpdater(DistrictUpdater):
 
         #Remove these people
         for voter in voters_to_remove:
-            district.voters.remove(voters_to_remove)
+            district.voters.remove(voter)
         district.candidates.remove(candidate_to_remove)
 
         #Add new people
@@ -51,4 +51,4 @@ class BasicDistrictUpdater(DistrictUpdater):
         candidate_x = norm.rvs(loc=district.baseline_dimensions.get(0))
         candidate_y = norm.rvs(loc=district.baseline_dimensions.get(1))
         candidate_vector = PoliticsVector(2, [candidate_x, candidate_y])
-        district.candidate.append(Candidate(candidate_vector, BasicCandidateMovement()))
+        district.candidates.append(Candidate(candidate_vector, BasicCandidateMovement()))
