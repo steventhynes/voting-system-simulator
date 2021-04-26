@@ -87,12 +87,12 @@ class SingleTransferableVoteVotingSystem(VotingSystem):
                         for vote_list in vote_lists:
                             if vote_list[1] < len(vote_list[0]) and vote_list[0][vote_list[1]][0] is candidate:
                                 vote_list[2] *= surplus_ratio
-                if len(winners) == num_seats:
-                    break
                 for candidate in winners:
                     if candidate in count:
                         del count[candidate]
                         remaining_seats -= 1
+                if len(winners) == num_seats:
+                    break
                 else:
                     del count[loser]
                     for vote_list in vote_lists:
