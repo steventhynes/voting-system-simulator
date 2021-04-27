@@ -9,7 +9,7 @@ from common.candidate_movements import BasicCandidateMovement
 class BasicDistrictPopulator(DistrictPopulator):
 
     def populate(self, district):
-        num_voters = 20
+        num_voters = 50
         num_candidates = 5
         candidate_retreiver = EuclideanDistanceCandidateRetreiver()
         for v in range(num_voters):
