@@ -21,17 +21,18 @@ class Country:
             dist.district_updater.update(dist)
         self.country_updater.update(self)
         self.election_count += 1
-
-    def get_district_representation(self): #For each voter in a district, add the squared distance to the closest representative
+        
+    #For each voter in a district, add the average approval (1 or 0) 
+    def get_district_representation(self):
         dist_list = []
         for district in self.districts:
-            total_error = 0
+            avg_rep_score = 0 #average for the district over the voters
             for voter in district.voters:
-                total_distance = 0 #total distance to candidates
+                rep_score = 0 #average for the voter over the representatives
+                preferred_candidates = [x[0] for x in voter.candidate_retreiver.get_candidates(voter, district)]
                 for rep in district.representatives:
-                    distance = voter.views.distance(rep.views_current)
-                    total_distance += distance
-                total_error += (total_distance / len(district.representatives)) ** 2 #avg distance to candidates
-            dist_list.append(total_error)
-        return dist_list
-        
+                    if rep in preferred_candidates:
+                        rep_score += 1 / len(district.representatives)
+                avg_rep_score += rep_score / len(district.voters)
+            dist_list.append(avg_rep_score)
+        return dist_list #returns a list of the district scores
