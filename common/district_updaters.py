@@ -9,6 +9,10 @@ from scipy.stats import norm
 class BasicDistrictUpdater(DistrictUpdater):
 
     def update(self, district):
+        #allow candidates to move
+        for candidate in district.candidates:
+            candidate.candidate_movement.move(candidate, district)
+
         #Find the two voters furthest from a candidate
         def distance_to_closest_candidate(voter):
             min_dist = float("inf")
