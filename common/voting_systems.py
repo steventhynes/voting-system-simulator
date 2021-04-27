@@ -94,6 +94,9 @@ class SingleTransferableVoteVotingSystem(VotingSystem):
                 if len(winners) == num_seats:
                     break
                 else:
+                    if len(count) == 1:
+                        winners.append(loser)
+                        break
                     del count[loser]
                     for vote_list in vote_lists:
                         while vote_list[1] < len(vote_list[0]) and vote_list[0][vote_list[1]][0] not in count:
