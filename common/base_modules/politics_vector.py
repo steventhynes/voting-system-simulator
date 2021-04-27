@@ -25,5 +25,6 @@ class PoliticsVector:
     def size(self):
         return len(self.backing_array)
 
+    #Use the distance formula to determine distance to another vector.
     def distance(self, other):
         return sqrt((self.get(0) - other.get(0)) ** 2 + (self.get(1) - other.get(1)) ** 2)

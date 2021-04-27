@@ -7,6 +7,7 @@ from random import random
 
 class BasicCountryPopulator(CountryPopulator):
 
+    #Spawn districts whose baseline dimensions are randomly picked from -1 to 1 in both axes.
     def populate(self, country):
         district_count = 10
         for i in range(district_count):
