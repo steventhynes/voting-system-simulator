@@ -1,2 +1,2 @@
-# cx4230_election
-My Election Simulation project for CX 4230.
+# Voting System Simulator
+My Election Simulation project for CX 4230 Computer Simulation at Georgia Tech.
